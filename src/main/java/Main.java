@@ -45,7 +45,7 @@ class Race {
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numberOfCars = 3; // легко поменять
+        int numberOfCars = 3; // можно легко изменить
         Car[] cars = new Car[numberOfCars];
 
         for (int i = 0; i < numberOfCars; i++) {
@@ -78,10 +78,10 @@ public class Main {
             String input = scanner.nextLine().trim();
             if (isValidSpeed(input)) {
                 speed = Integer.parseInt(input);
-                if (speed > 0 && speed <= 250) {
+                if (speed >= 0 && speed <= 250) { // ✅ от 0 до 250
                     break;
                 } else {
-                    System.out.println("Неправильная скорость. Введите число от 1 до 250:");
+                    System.out.println("Неправильная скорость. Введите число от 0 до 250:");
                 }
             } else {
                 System.out.println("Неправильная скорость. Введите целое число:");
